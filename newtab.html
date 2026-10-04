@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>New Tab</title>
+    <link rel="stylesheet" href="newtab.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="header">
+        <p class="eyebrow">Goals</p>
+        <h1>What are you counting down to?</h1>
+      </header>
+
+      <section class="goals" id="goals" aria-label="Goal countdowns"></section>
+
+      <section class="links-section" aria-label="Favorite sites">
+        <div class="links-heading">
+          <h2>Favorite sites</h2>
+          <button type="button" class="btn ghost" id="add-link">Add site</button>
+        </div>
+        <div class="links" id="links"></div>
+      </section>
+    </main>
+
+    <dialog class="modal" id="goal-modal">
+      <form method="dialog" id="goal-form">
+        <h2 id="goal-modal-title">Set a goal</h2>
+        <label>
+          Title
+          <input type="text" id="goal-title" maxlength="80" required placeholder="Ship the product" />
+        </label>
+        <label>
+          Target date and time
+          <input type="datetime-local" id="goal-datetime" required />
+        </label>
+        <div class="modal-actions">
+          <button type="button" class="btn danger hidden" id="goal-clear">Clear goal</button>
+          <span class="spacer"></span>
+          <button type="button" class="btn ghost" id="goal-cancel">Cancel</button>
+          <button type="submit" class="btn primary">Save</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog class="modal" id="link-modal">
+      <form method="dialog" id="link-form">
+        <h2 id="link-modal-title">Add site</h2>
+        <label>
+          Name
+          <input type="text" id="link-name" maxlength="40" required placeholder="GitHub" />
+        </label>
+        <label>
+          URL
+          <input type="url" id="link-url" required placeholder="https://github.com" />
+        </label>
+        <div class="modal-actions">
+          <button type="button" class="btn danger hidden" id="link-delete">Remove</button>
+          <span class="spacer"></span>
+          <button type="button" class="btn ghost" id="link-cancel">Cancel</button>
+          <button type="submit" class="btn primary">Save</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="newtab.js"></script>
+  </body>
+</html>
